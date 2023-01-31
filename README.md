@@ -1,6 +1,7 @@
 # Image-Classification-on-multiple-GPU
 
 #The Dataset 
+
 What is that person saying? American Sign Language is a natural language that serves as the predominant sign language of Deaf communities in the United States of America. ASL is a complete and organized visual language that is expressed by employing both manual and non manual features. However, with the advent of technology we can devise a more sophisticated solution which can translate this sign language into speech.
  
 In this project we aim to do so with the help of a Deep Learning Model trained to classify the images. Also to enhance the model’s performance and it’s efficiency we are implementing this project using DataParallelism and DistributedDataParallelism techniques.
