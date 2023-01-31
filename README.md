@@ -12,7 +12,7 @@ In this project we aim to do so with the help of a Deep Learning Model trained t
 The training data set contains 87,000 images which are 200x200 pixels. There are 29 classes, of which 26 are for the letters A-Z and 3 classes for SPACE, DELETE and NOTHING.
  
 These 3 classes are very helpful in real-time applications, and classification. The test data set contains a mere 29 images, to encourage the use of real-world test images.
-<img width="197" alt="image" src="https://user-images.githubusercontent.com/99056351/215807500-b7d0e6e9-cab2-4ea9-ad8a-b889d1bcab03.png">
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/99056351/215807500-b7d0e6e9-cab2-4ea9-ad8a-b889d1bcab03.png">
 
 ## Preparing the dataset 
 
@@ -20,13 +20,14 @@ The dataset used for this project consists of images which are required to be co
  
 As part of preprocessing the data we first apply image transformation to convert the input images into tensors and further normalization to remove anomalies and eliminate transitive dependency if any. And in order to efficiently train our model later we sample the data and define training and validation subsets.
 
-<img width="369" alt="image" src="https://user-images.githubusercontent.com/99056351/215807556-ab75d6b5-1848-42e2-8dca-037f2990cd7c.png">
+<img width="468" alt="image" src="https://user-images.githubusercontent.com/99056351/215807556-ab75d6b5-1848-42e2-8dca-037f2990cd7c.png">
 
 ## Building the Model
 As discussed we have implemented 2 parallel approaches to train our model as with DataParallel and DistributedDataParallel. In both the cases, we have defined the model with the help of a helper function described in below sub-modules.
 i) Using Pythorch’s DataParallel module
 The model_loader() function takes the batch_size and data_subsets as arguments. The function first samples the data as per batch_size and loads them as per training and validation data loader.
- <img width="347" alt="image" src="https://user-images.githubusercontent.com/99056351/215808127-0958c7ee-0c31-41a1-b3fe-730263f962c6.png">
+
+ <img width="468" alt="image" src="https://user-images.githubusercontent.com/99056351/215808127-0958c7ee-0c31-41a1-b3fe-730263f962c6.png">
 
 Then we initialize our model and convert the model using torch’s DataParallel class by passing the model as the object resnet = nn.DataParallel(resnet) Adn. Once the model has been instantiated we modify the model’s fully connected(fc) layer in order to yield output into the required number of categories, in this case the length of the classes variable as seen from the code. 
 <img width="468" alt="image" src="https://user-images.githubusercontent.com/99056351/215808182-c810c2da-9651-461a-a80d-645a3e018d34.png">
