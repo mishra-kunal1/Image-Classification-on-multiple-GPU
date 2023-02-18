@@ -7,8 +7,8 @@ import warnings
 warnings.filterwarnings('ignore')
 
 num_classes=29
-path='/kaggle/input/asl-alphabet/asl_alphabet_train/asl_alphabet_train/'
-#path='../asl_alphabet_train/asl_alphabet_train/'
+
+path='../asl_alphabet_train/asl_alphabet_train/'
 train_loader, val_loader = preparing_dataset_torch.preparing_dataset(path)
 print('Data Loaded')
 
