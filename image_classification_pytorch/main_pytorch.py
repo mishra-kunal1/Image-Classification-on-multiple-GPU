@@ -13,7 +13,7 @@ train_loader, val_loader = preparing_dataset_torch.preparing_dataset(path)
 print('Data Loaded')
 
 device=torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
+print('Device',device)
 #curr_model = custom_model.MySeqModel(num_classes)
 curr_model=transfer_learning_pytorch.pretrained_model(num_classes)
 curr_model.to(device)
@@ -24,6 +24,6 @@ optimizer = torch.optim.Adam(curr_model.parameters(), lr=0.003)
 
 print('Training Started')
 model_train_torch.model_train(10,train_loader, val_loader,curr_model,
-criterion,optimizer)
+criterion,optimizer,device)
 
 
